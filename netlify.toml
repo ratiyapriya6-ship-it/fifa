@@ -1,0 +1,11 @@
+# Netlify configuration file for FIFA 2026 Live Match Tracker
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect all paths to index.html for Single Page Application routing support
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

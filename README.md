@@ -1,0 +1,45 @@
+---
+title: FIFA World Cup 2026 Khmer Tracker
+emoji: 🏆
+colorFrom: gold
+colorTo: blue
+sdk: static
+app_build_command: npm run build
+app_file: dist/index.html
+pinned: false
+---
+
+# FIFA World Cup 2026 Khmer Live Score & Fixtures Tracker
+
+កម្មវិធីតាមដានលទ្ធផលប្រកួត គ្រាប់បាល់ ពិន្ទុ និងតារាងការប្រកួត FIFA World Cup 2026 ជាភាសាខ្មែរ ដោយបម្លែងម៉ោងប្រកួតទៅជាម៉ោងនៅប្រទេសកម្ពុជា (GMT+7)។
+
+## មុខងារចម្បងៗ (Features)
+- 🕒 **បម្លែងម៉ោងប្រកួតទៅជាម៉ោងនៅកម្ពុជា**៖ បង្ហាញម៉ោងប្រកួតច្បាស់លាស់នៅកម្ពុជា និងការរាប់ថយក្រោយទៅកាន់ការប្រកួតបន្ទាប់។
+- ⚽ **Live Match Engine & Simulator**៖ តាមដានការប្រកួតផ្ទាល់ៗ គ្រាប់បាល់ អ្នកស៊ុតបញ្ចូលទី និងកាតលឿង/ក្រហម ព្រមទាំងមានមុខងារ Simulator ដើម្បីដំណើរការប្រកួតសាកល្បង។
+- 📊 **តារាងពិន្ទុស្វ័យប្រវត្តិ (Standings)**៖ គណនាតារាងពិន្ទុនៃពូលទាំង ១២ (Group A ដល់ L) ស្វ័យប្រវត្តិតាមរយៈការប្រកួតដែលបានបញ្ចប់ ឬកែប្រែ។
+- 📝 **Admin Panel**៖ អនុញ្ញាតឱ្យកែប្រែពិន្ទុការប្រកួតដោយដៃ និងកំណត់ទិន្នន័យឡើងវិញ។
+- 📱 **Premium UI & Responsive Design**៖ រចនាបថងងឹត (Sleek Dark Theme) ជាមួយ Glassmorphism និងទង់ជាតិប្រទេសនីមួយៗ។
+
+## របៀបដំណើរការកម្មវិធី (How to Run)
+1. ដំឡើង Node.js (ប្រសិនបើមិនទាន់មាន)
+2. ដំណើរការបញ្ជាខាងក្រោមដើម្បីដំឡើង dependencies៖
+   ```bash
+   npm install
+   ```
+3. ដំណើរការ dev server៖
+   ```bash
+   npm run dev
+   ```
+4. បើក Browser ទៅកាន់អាសយដ្ឋានដែលបង្ហាញ (ឧ. `http://localhost:5173`)
+
+## ការដាក់ឱ្យដំណើរការលើ Netlify (Deploy to Netlify)
+
+គម្រោងនេះត្រូវបានកំណត់រចនាសម្ព័ន្ធរួចជាស្រេចសម្រាប់ Netlify តាមរយៈឯកសារ [netlify.toml](file:///c:/My%20tool/FIFA2026/netlify.toml)៖
+1. បង្កើតគណនី និងចូលទៅកាន់ [Netlify](https://www.netlify.com/)
+2. ភ្ជាប់គណនី Git (GitHub, GitLab, etc.) របស់អ្នកដែលមានគម្រោងនេះ
+3. ជ្រើសរើសយកគម្រោង `FIFA2026` នេះ
+4. Netlify នឹងរកឃើញការកំណត់ក្នុង `netlify.toml` ដោយស្វ័យប្រវត្ត៖
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+5. ចុច **Deploy site** ជាការស្រេច។
+

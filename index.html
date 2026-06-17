@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>កម្មវិធីតាមដានលទ្ធផលប្រកួត FIFA World Cup 2026 (Cambodia Time)</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="តាមដានលទ្ធផលការប្រកួតពិន្ទុ និងតារាងការប្រកួត FIFA World Cup 2026 ម៉ោងនៅកម្ពុជាផ្ទាល់ៗ">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Header Section -->
+    <header>
+      <div class="brand-wrapper">
+        <span class="logo-icon">🏆</span>
+        <h1>FIFA WORLD CUP <span>2026</span></h1>
+      </div>
+      <div class="sub-title">
+        កម្មវិធីតាមដានលទ្ធផល គ្រាប់បាល់ ពិន្ទុ និងតារាងការប្រកួតបន្តបន្ទាប់ (គិតជាម៉ោងនៅប្រទេសកម្ពុជា)
+      </div>
+      
+      <!-- Time Ticker Bar -->
+      <div class="info-ticker-bar">
+        <div class="ticker-item cambodia-time">
+          <i>🕒</i> ម៉ោងនៅកម្ពុជា (GMT+7)៖ <span id="cambodia-clock">កំពុងទាញយក...</span>
+        </div>
+        <div class="ticker-item live-badge">
+          <span class="pulse-dot"></span>
+          <span>ការប្រកួតកំពុងលេងផ្ទាល់</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Match Countdown Ticker -->
+    <div class="panel-card" style="margin-bottom: 25px; padding: 15px 25px;">
+      <div id="countdown-container" style="text-align: center; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+        កំពុងគណនាការប្រកួតបន្ទាប់...
+      </div>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <div class="tabs-navigation">
+      <button class="tab-btn active" data-tab="live-tab">
+        <i>⚽</i> ការប្រកួតផ្ទាល់ (Live)
+      </button>
+      <button class="tab-btn" data-tab="fixtures-tab">
+        <i>📅</i> កម្មវិធីប្រកួត & លទ្ធផល
+      </button>
+      <button class="tab-btn" data-tab="standings-tab">
+        <i>📊</i> តារាងពិន្ទុ (Standings)
+      </button>
+    </div>
+
+    <!-- Dashboard Grid Layout -->
+    <div class="dashboard-grid">
+      
+      <!-- Left / Main Panel (Tab Contents) -->
+      <div class="main-panel">
+        
+        <!-- TAB 1: LIVE MATCHES -->
+        <div class="tab-content active" id="live-tab">
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3 class="panel-title"><i>🔴</i> ការប្រកួតកំពុងលេងផ្ទាល់ (Live Matches)</h3>
+            </div>
+            <div class="live-matches-container" id="live-matches-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: FIXTURES & RESULTS -->
+        <div class="tab-content" id="fixtures-tab">
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3 class="panel-title"><i>📅</i> កាលវិភាគការប្រកួត និងលទ្ធផល (Fixtures & Results)</h3>
+            </div>
+            
+            <!-- Filters -->
+            <div class="fixtures-filters">
+              <input type="text" id="search-team" class="search-input" placeholder="ស្វែងរកក្រុម (ឧ. បារាំង, ប្រេស៊ីល...)">
+              
+              <select id="filter-group" class="filter-select">
+                <option value="ALL">គ្រប់ពូលទាំងអស់</option>
+                <option value="A">ពូល A</option>
+                <option value="B">ពូល B</option>
+                <option value="C">ពូល C</option>
+                <option value="D">ពូល D</option>
+                <option value="E">ពូល E</option>
+                <option value="F">ពូល F</option>
+                <option value="G">ពូល G</option>
+                <option value="H">ពូល H</option>
+                <option value="I">ពូល I</option>
+                <option value="J">ពូល J</option>
+                <option value="K">ពូល K</option>
+                <option value="L">ពូល L</option>
+              </select>
+
+              <select id="filter-status" class="filter-select">
+                <option value="ALL">គ្រប់ស្ថានភាព</option>
+                <option value="FINISHED">លេងរួចរាល់</option>
+                <option value="LIVE">កំពុងប្រកួត (Live)</option>
+                <option value="UPCOMING">មិនទាន់លេង</option>
+              </select>
+            </div>
+
+            <!-- Fixtures List -->
+            <div class="fixtures-list-container" id="fixtures-list">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: GROUP STANDINGS -->
+        <div class="tab-content" id="standings-tab">
+          <div class="panel-card">
+            <div class="panel-header" style="flex-direction: column; align-items: flex-start; gap: 10px;">
+              <h3 class="panel-title" id="standings-group-title">តារាងពិន្ទុ ពូល A</h3>
+              
+              <!-- Group Pills Navigator -->
+              <div class="standings-tabs" id="standings-groups-nav">
+                <!-- Group Pills Rendered via JS -->
+              </div>
+            </div>
+
+            <!-- Standings Table -->
+            <div class="table-wrapper">
+              <table class="standings-table">
+                <thead>
+                  <tr>
+                    <th style="width: 50px;">#</th>
+                    <th style="text-align: left; padding-left: 15px;">ក្រុម</th>
+                    <th>លេង</th>
+                    <th>ឈ្នះ</th>
+                    <th>ស្មើ</th>
+                    <th>ចាញ់</th>
+                    <th>គ្រាប់បាល់</th>
+                    <th>GD</th>
+                    <th>ពិន្ទុ</th>
+                  </tr>
+                </thead>
+                <tbody id="standings-table-body">
+                  <!-- Rendered via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Panel (Sidebar Tools) -->
+      <div class="side-panel">
+        
+        <!-- Timezone Information Widget -->
+        <div class="panel-card" style="margin-bottom: 25px;">
+          <div class="panel-header">
+            <h3 class="panel-title"><i>🌐</i> ម៉ោងប្រកួតនៅកម្ពុជា</h3>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">
+            ប្រទេសម្ចាស់ផ្ទះរួមមាន អាមេរិក កាណាដា និងម៉ិកស៊ិក មានម៉ោងយឺតជាងប្រទេសកម្ពុជាពី <b>១១ ទៅ ១៤ ម៉ោង</b>។
+          </p>
+          <div class="cambodia-time-widget">
+            <div class="widget-icon-box">📢</div>
+            <div class="widget-content">
+              <h4>ការប្រកួតភាគច្រើន៖</h4>
+              <p>លេងនៅម៉ោងយប់ជ្រៅ ឬព្រលឹមស្រាងៗនៅកម្ពុជា (ចន្លោះម៉ោង ៨ព្រឹក ដល់ ១១យប់ ម៉ោងក្នុងស្រុកអាមេរិក)។</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator & Admin controls -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <h3 class="panel-title"><i>⚙️</i> ឧបករណ៍គ្រប់គ្រង & Simulator</h3>
+          </div>
+          <div class="simulator-panel">
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">
+              អ្នកអាចដំណើរការ Simulator ដើម្បីបង្កើតគ្រាប់បាល់/កាតដោយស្វ័យប្រវត្ត ឬកែប្រែពិន្ទុដោយដៃខាងក្រោមនេះ៖
+            </p>
+            
+            <button class="sim-btn" id="btn-toggle-sim">
+              ⚽ ចាប់ផ្តើមការប្រកួតសាកល្បង (Simulate)
+            </button>
+            
+            <button class="sim-btn" id="btn-reset-data" style="background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid var(--glass-border); margin-top: -5px;">
+              🔄 កំណត់ទិន្នន័យឡើងវិញ
+            </button>
+            
+            <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+              <h4 style="font-size: 0.88rem; margin-bottom: 10px; font-weight: 700; display:flex; align-items:center; gap:5px;">
+                📝 កែប្រែពិន្ទុការប្រកួតដោយដៃ៖
+              </h4>
+              <div class="score-editor-list" id="admin-score-list">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>© ២០២៦ កម្មវិធីតាមដានការប្រកួតបាល់ទាត់ពិភពលោក FIFA World Cup 2026</p>
+      <p style="margin-top: 5px; font-size: 0.75rem; color: rgba(255,255,255,0.3)">
+        រចនាឡើងជាមួយ ❤️ សម្រាប់អ្នកស្នេហាវិស័យកីឡាបាល់ទាត់នៅកម្ពុជា
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Video Highlight Modal -->
+  <div id="highlight-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="modal-close-btn">&times;</span>
+      <h3 id="modal-match-title" style="margin-bottom: 15px; font-weight: 700; color: var(--color-gold);"></h3>
+      <div class="iframe-container">
+        <iframe id="highlight-iframe" src="" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="modal-fallback">
+        <p>ប្រសិនបើវីដេអូមិនដំណើរការ ឬបង្ហាញទំព័រទទេ (ដោយសារគោលការណ៍សុវត្ថិភាពពីគេហទំព័រ FIFA)៖</p>
+        <a id="modal-fallback-link" href="" target="_blank" class="sim-btn" style="margin-top: 10px; width: auto; display: inline-flex; background: var(--color-cyan);">🌐 បើកទស្សនាក្នុង Tab ថ្មី</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container for Notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript File -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
